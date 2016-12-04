@@ -65,13 +65,13 @@ public class Controller {
         
         if ((e == null) || (e instanceof Constant && ((Constant)e).getValue() == 0 && !s.equals("0"))){
             List<String> l = new ArrayList<>();
-            ddx.setOrignal("s");
+            ddx.setOrignal(s);
             ddx.setDerivative("0");
             l.add("Input read error.");
             ddx.setSteps(l);
         }
         else{        
-            ddx.setOrignal(Stringifier.stringify(e));
+            ddx.setOrignal(s);
             ddx.setDerivative(Stringifier.stringify(d));
             if (d instanceof Constant && ((Constant)d).getValue() == 0 && !(e instanceof Constant)){
                 List<String> l = new ArrayList<>();
