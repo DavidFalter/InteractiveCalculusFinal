@@ -97,7 +97,8 @@ ul.topnav li.icon {
 </style>
 </head>
 <body>
-<ul class="topnav" id="myTopnav">
+
+	<ul class="topnav" id="myTopnav">
 		<li><a class="active" href="/InteractiveCalculus/Main.jsp">Home</a></li>
 		<li><a href="/InteractiveCalculus/Quiz.jsp">Quiz</a></li>
 		<li><a href="/InteractiveCalculus/DiscussionBoard.jsp">Discussion Board</a></li>
@@ -113,6 +114,7 @@ ul.topnav li.icon {
 		<li class="icon"><a href="javascript:void(0);"
 			style="font-size: 15px;" onclick="myFunction()">☰</a></li>
 	</ul>
+
 	<div align="center">
 		<form action="LogIn.jsp">
 			<table border="0">
@@ -121,8 +123,10 @@ ul.topnav li.icon {
 					<td><input name="username" class="form-control"></td>
 				</tr>
 				<tr>
+				<tr>
 					<td>Password:</td>
-					<td><input type = "" name="password" class="form-control"></td>
+					<td><input type = "password" name="password" class="form-control"></td>
+				</tr>
 				</tr>
 				<tr>
 					<td>

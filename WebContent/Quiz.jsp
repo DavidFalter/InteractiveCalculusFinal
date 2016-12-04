@@ -103,11 +103,16 @@ ul.topnav li.icon {
 	<ul class="topnav" id="myTopnav">
 		<li><a class="active" href="/InteractiveCalculus/Main.jsp">Home</a></li>
 		<li><a href="/InteractiveCalculus/Quiz.jsp">Quiz</a></li>
-		<li><a href="/InteractiveCalculus/DiscussionBoard.jsp">Discussion
-				Board</a></li>
-		<li><a href="/InteractiveCalculus/CreateAccount.jsp">Create
-				Account</a></li>
+		<li><a href="/InteractiveCalculus/DiscussionBoard.jsp">Discussion Board</a></li>
+		<%if(session.getAttribute("name") == null)
+    	  {%>
+		<li><a href="/InteractiveCalculus/CreateAccount.jsp">Create Account</a></li>
 		<li><a href="/InteractiveCalculus/LogIn.jsp">Log In</a></li>
+		<%} %>
+		<%if(session.getAttribute("name") != null)
+    	  {%>	
+		<li><a href="/InteractiveCalculus/LogOut.jsp">Log Out</a></li>
+		<%} %>
 		<li class="icon"><a href="javascript:void(0);"
 			style="font-size: 15px;" onclick="myFunction()">☰</a></li>
 	</ul>
@@ -223,11 +228,16 @@ function myFunction() {
 	<ul class="topnav" id="myTopnav">
 		<li><a class="active" href="/InteractiveCalculus/Main.jsp">Home</a></li>
 		<li><a href="/InteractiveCalculus/Quiz.jsp">Quiz</a></li>
-		<li><a href="/InteractiveCalculus/DiscussionBoard.jsp">Discussion
-				Board</a></li>
-		<li><a href="/InteractiveCalculus/CreateAccount.jsp">Create
-				Account</a></li>
+		<li><a href="/InteractiveCalculus/DiscussionBoard.jsp">Discussion Board</a></li>
+		<%if(session.getAttribute("name") == null)
+    	  {%>
+		<li><a href="/InteractiveCalculus/CreateAccount.jsp">Create Account</a></li>
 		<li><a href="/InteractiveCalculus/LogIn.jsp">Log In</a></li>
+		<%} %>
+		<%if(session.getAttribute("name") != null)
+    	  {%>	
+		<li><a href="/InteractiveCalculus/LogOut.jsp">Log Out</a></li>
+		<%} %>
 		<li class="icon"><a href="javascript:void(0);"
 			style="font-size: 15px;" onclick="myFunction()">☰</a></li>
 	</ul>

@@ -187,26 +187,6 @@ function myFunction() {
 	</form>
 
 
-	<%-- <% 
-UserDAO dao = new UserDAO();
-
-List<User> users = dao.selectAll();
-%>
-<ul> 
-<% for(User user : users) {%>
-	<li> 
-			<span><%= user.getUserName() %></span>
-			<span><%= user.getPrivilege() %></span>
-	</li>
-	<%} %>
-
-
-</ul>
-
-<% %>
-<ul>
-
-</ul> --%>
 	<%if("solve".equals(action))
 	{%>
 	<div>
@@ -263,8 +243,8 @@ List<User> users = dao.selectAll();
   				for(String step : derivative.getSteps()) 
   				{
   					i++;%>
-					<li>Step <%=i %>) <%=step %>
-					</li>
+					<p>Step <%=i %>) <%=step %>
+					</p	>
 					<%}} i = 0; %>
 				</div>
 				<%} %>
@@ -291,12 +271,12 @@ List<User> users = dao.selectAll();
   		for(String step : integral.getSteps()) 
   		{
   		j++;%>
-					<li>Step <%=j %>) <%=step %>
-					</li>
+					<p>Step <%=j %>) <%=step %>
+					</p>
 					<%}} j = 0;%>
 				</div>
 				<%} %>
-				<form action="Main.jsp">
+				<!-- <form action="Main.jsp">
 					<div>
 						<h2>
 							Find Definite Integral
@@ -312,7 +292,7 @@ List<User> users = dao.selectAll();
 								</tr>
 							</table>
 					</div>
-				</form>
+				</form> -->
 				<%if(integral.getX1() != " " && integral.getX2() != " "){%>
 				<div id="definteg" style="width: 100%; height: 100%"></div>
 				<%} %>

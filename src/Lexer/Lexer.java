@@ -3,11 +3,15 @@ package Lexer;
 import java.util.ArrayList;
 
 public class Lexer {
-    private static final String separators = "+-*/^()";
-    private static final String[] reservedWords = {"sin", "cos", "tan", "ln", "log", 
+    private final String separators = "+-*/^()";
+    private final String[] reservedWords = {"sin", "cos", "tan", "ln", "log", 
         "csc", "sec", "cot", "arcsin", "arccos", "arctan", "arccsc", "arcsec", "arccot"};
+    /**
+     * @param expression
+     * @return
+     */
     public ArrayList<Token> lex(String expression){
-        char[] content = expression.toCharArray();
+    	char[] content = expression.toCharArray();
         char[] buffer = new char[expression.length()];
         String[] separated = new String[expression.length()];
         ArrayList<Token> holder = new ArrayList<>();
@@ -77,36 +81,84 @@ public class Lexer {
                 holder.add(new Number(Double.parseDouble(separated[i]), TokenType.NUMBERSYM));
             }
             else {
+            	int k = 0;
                 for (int j = 0; j < reservedWords.length; j++){
                     if (separated[i].compareToIgnoreCase(reservedWords[j]) == 0){
                         if (j == 0)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.SINSYM));
+                            k++;
+                        }
                         else if (j == 1)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.COSSYM));
+                        	k++;
+                    	}
                         else if (j == 2)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.TANSYM));
+                            k++;
+                        }
                         else if (j == 3)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.LNSYM));
+                            k++;
+                        }
                         else if (j == 4)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.LOGSYM));
+                            k++;
+                        }
                         else if (j == 5)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.CSCSYM));
+                            k++;
+                        }
                         else if (j == 6)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.SECSYM));
+                            k++;
+                        }
                         else if (j == 7)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.COTSYM));
+                            k++;
+                        }
                         else if (j == 8)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.ARCSINSYM));
+                            k++;
+                        }
                         else if (j == 9)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.ARCCOSSYM));
+                            k++;
+                        }
                         else if (j == 10)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.ARCTANSYM));
+                            k++;
+                        }
                         else if (j == 11)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.ARCCSCSYM));
+                            k++;
+                        }
                         else if (j == 12)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.ARCSECSYM));
+                            k++;
+                        }
                         else if (j == 13)
+                        {
                             holder.add(new Identifier(reservedWords[j], TokenType.ARCCOTSYM));
+                            k++;
+                        }
+                        
+                    }
+                    if(k == 0) 
+                    {
+                    	return new ArrayList<>();
                     }
                 }
             }
